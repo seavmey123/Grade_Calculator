@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="Script.js"></script>
+  </head>
+  <body>
+    <h2>TUX GLOBAL INSTITUTE</h2>
+    <h2>ACADEMIC YEAR 2025-2026</h2>
+    <p style="text-align: center">Associate Degree</p>
+    <p style="text-align: center">
+      Term 2 (23rd June, 2025 - 10th October, 2025)
+    </p>
+    <h4 style="text-align: center">Lecturer: Ngin Kimlong</h4>
+
+    <table id="gradeTable">
+      <thead>
+        <tr>
+          <th rowspan="2">No</th>
+          <th rowspan="2">ID</th>
+          <th rowspan="2">Name</th>
+          <th rowspan="2">Gender</th>
+          <th rowspan="2">Course</th>
+          <th rowspan="2">Attendance (15)</th>
+          <th rowspan="2">Activity (15)</th>
+          <th rowspan="2">Project (40)</th>
+          <th colspan="2">Exam (30)</th>
+          <th rowspan="2">Total</th>
+          <th rowspan="2">Grade</th>
+        </tr>
+        <tr>
+          <th>Mid-Term (15)</th>
+          <th>Final (15)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      const students = [
+        {
+          no: 1,
+          id: "S20250112",
+          name: "Chea Dalin",
+          gender: "F",
+          course: "DSA",
+        },
+        {
+          no: 2,
+          id: "S20250168",
+          name: "CHEA Samnang",
+          gender: "M",
+          course: "DSA",
+        },
+        {
+          no: 3,
+          id: "S20250143",
+          name: "Chea Sophanita",
+          gender: "F",
+          course: "DSA",
+        },
+        {
+          no: 4,
+          id: "S20250204",
+          name: "EN Sreythorn",
+          gender: "F",
+          course: "DSA",
+        },
+        {
+          no: 5,
+          id: "S20250205",
+          name: "Sok Sreysor",
+          gender: "F",
+          course: "DSA",
+        },
+        {
+          no: 6,
+          id: "S20250220",
+          name: "Chen Sopheak",
+          gender: "M",
+          course: "DSA",
+        },
+        {
+          no: 7,
+          id: "S20250245",
+          name: "Men Chetra",
+          gender: "M",
+          course: "DSA",
+        },
+      ];
+
+      students.forEach((stu) => {
+        $("#gradeTable tbody").append(`
+      <tr>
+        <td>${stu.no}</td>
+        <td>${stu.id}</td>
+        <td>${stu.name}</td>
+        <td>${stu.gender}</td>
+        <td>${stu.course}</td>
+        <td><input type="number" min="0" max="15"></td>
+        <td><input type="number" min="0" max="15"></td>
+        <td><input type="number" min="0" max="40"></td>
+        <td><input type="number" min="0" max="15"></td> 
+        <td><input type="number" min="0" max="15"></td> 
+        <td class="total">0</td>
+        <td class="grade">-</td>
+      </tr>
+    `);
+      });
+    </script>
+  </body>
+</html>
